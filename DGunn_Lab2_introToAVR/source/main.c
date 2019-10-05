@@ -28,7 +28,7 @@ int main(void) {
 	if(tmpA0 && ~tmpA1){
 		tmpB0 = 0x01;
 	} else {
-		tmpB0 = 0x01;
+		tmpB0 = 0x00;
 	}
 	PORTB = tmpB0;	
 
