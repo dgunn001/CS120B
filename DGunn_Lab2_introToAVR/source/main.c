@@ -18,12 +18,20 @@ int main(void) {
 	PORTA = 0xFF;
 	DDRB = 0xFF; // Configure port B's 8 pins as outputs
 	PORTB = 0x00; // Initialize PORTB output to 0’s
-	unsigned char temp_input = 0x00;
+	unsigned char tmpA0 = 0x00;
+	unsigned char tmpA1 = 0x00;
+	unsigned char tmpB0 = 0x00;
     /* Insert your solution below */
     while (1) {
-	temp_input = PINA;
-	PORTB = temp_input;
+	tmpA0 = PINA & 0x01;
+	tmpA1 = PINA & 0x02;
+	if(tmpA0 && ~tmpA1){
+		tmpB0 = 0x01;
+	} else {
+		tmpB0 = 0x01;
+	}
+	PORTB = tmpB0;	
 
     }
-    return 1;
+    return 0;
 }
