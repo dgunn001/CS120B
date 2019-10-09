@@ -1,7 +1,9 @@
-Breakpoint 1 at 0xea: file source/main.c, line 25.
+Breakpoint 1 at 0xf0: file source/main.c, line 24.
 Note: automatically using hardware breakpoints for read-only addresses.
+test/initDebugger.gdb:19: Error in sourced command file:
+Remote connection closed
 ======================================================
 Running all tests..."
 
-"PINA: 0x00, PINB: 0x00 => PORTC: 0"...“PINA:...“PINA:...“PINA:...======================================================
-Quitting: Remote doesn't know how to detach
+"PINA: 0x03 => PORTC: 2"...test/tests.gdb:32: Error in sourced command file:
+Cannot access memory at address 0x800020
