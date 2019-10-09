@@ -27,104 +27,41 @@ echo ======================================================\n
 echo Running all tests..."\n\n
 
 # Example test:
-test "PINA: 0x02=> PORTC: 0x60"
+test "PINA: 0xF0=> PORTC: 0x00, PORTB: 0x0F"
 # Set inputs
-setPINA 0x02
+setPINA 0xF0
 # Continue for several ticks
 continue 1
 # Set expect values
-expectPORTC 0x60
+expectPORTC 0x00
+expectPORTB 0x0F
 # Check pass/fail
 checkResult
 
 # Example test:
-test "PINA: 0x03=> PORTC: 0x70"
+test "PINA: 0x54=> PORTC: 0x40, PORTB: 0x05"
 # Set inputs
-setPINA 0x03
+setPINA 0x54
 # Continue for several ticks
 continue 1
 # Set expect values
-expectPORTC 0x70
+expectPORTC 0x40
+expectPORTB 0x05
 # Check pass/fail
 checkResult
 
 # Example test:
-test "PINA: 0x05=> PORTC: 0x38"
+test "PINA: 0x0F=> PORTC: 0xF0, PORTB: 0x00"
 # Set inputs
-setPINA 0x05
+setPINA 0x0F
 # Continue for several ticks
 continue 1
 # Set expect values
-expectPORTC 0x38
+expectPORTC 0xF0
+expectPORTB 0x00
 # Check pass/fail
 checkResult
 
-# Example test:
-test "PINA: 0x07=> PORTC: 0x3C"
-# Set inputs
-setPINA 0x07
-# Continue for several ticks
-continue 1
-# Set expect values
-expectPORTC 0x3C
-# Check pass/fail
-checkResult
-
-# Example test:
-test "PINA: 0x0A=> PORTC: 0x3E"
-# Set inputs
-setPINA 0x0A
-# Continue for several ticks
-continue 1
-# Set expect values
-expectPORTC 0x3E
-# Check pass/fail
-checkResult
-
-# Example test:
-test "PINA: 0x0D=> PORTC: 0x3F"
-# Set inputs
-setPINA 0x0D
-# Continue for several ticks
-continue 1
-# Set expect values
-expectPORTC 0x3F
-# Check pass/fail
-checkResult
-
-# Example test:
-test "PINA: 0x1D=> PORTC: 0x3F"
-# Set inputs
-setPINA 0x1D
-# Continue for several ticks
-continue 1
-# Set expect values
-expectPORTC 0x3F
-
-# Check pass/fail
-checkResult
-
-# Example test:
-test "PINA: 0x31=> PORTC: 0xE0"
-# Set inputs
-setPINA 0x31
-# Continue for several ticks
-continue 1
-# Set expect values
-expectPORTC 0xE0
-# Check pass/fail
-checkResult
-
-# Example test:
-test "PINA: 0x3D=> PORTC: 0xBF"
-# Set inputs
-setPINA 0x3D
-# Continue for several ticks
-continue 1
-# Set expect values
-expectPORTC 0xbf
-# Check pass/fail
-checkResult
 
 # Add tests below
 
