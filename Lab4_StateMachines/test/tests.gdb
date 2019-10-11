@@ -27,56 +27,36 @@ echo ======================================================\n
 echo Running all tests..."\n\n
 
 # Test sequence from waitA0: A0, !A0, A1 => PORTB: 1
-test "PINA: 0x02  => PORTB: 6"
-set state = start
+test "state: lock, PINA 0x04, PINA 0x02  => state: unlocked"
+set state = lock
+setPINA 0x04
+continue
 setPINA 0x02
 continue
-setPINA 0x00
-continue
-expectPORTC 0x06
+expect state unlock
 checkResult
 
-test "PINA: 0x01  => PORTB: 8"
-set state = start
-setPINA 0x01
+test "state: unlocked, PINA 0x80  => state: locked"
+set state = unlock
+setPINA 0x80
 continue
-setPINA 0x00
-continue
-expectPORTC 0x08
+expect state lock
 checkResult
 
-test "PINA: 0x02,0x02,0x02 => PORTB: 4"
-set state = start
-setPINA 0x02
+test "PINA: 0x04 => state : wait"
+set state = lock
+setPINA 0x04
 continue
-setPINA 0x00
-continue
-setPINA 0x02
-continue
-setPINA 0x00
-continue
-setPINA 0x02
-continue
-setPINA 0x00
-continue
-expectPORTC 0x04
+expect state wait
 checkResult
 
-test "PINA: 0x02,0x02,0x01 => PORTB: 6"
-set state = start
-setPINA 0x02
-continue
-setPINA 0x00
-continue
-setPINA 0x02
-continue
-setPINA 0x00
+test "PINA: 0x04,0x01 => state: locked"
+set state = lock
+setPINA 0x04
 continue
 setPINA 0x01
 continue
-setPINA 0x00
-continue
-expectPORTC 0x06
+expect state lock
 checkResult
 
 
