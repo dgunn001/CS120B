@@ -3,5 +3,5 @@ Note: automatically using hardware breakpoints for read-only addresses.
 ======================================================
 Running all tests..."
 
-"state: lock, PINA 0x04, PINA 0x02  => state: unlocked"..."state: unlocked, PINA 0x80  => state: locked"..."PINA: 0x04 => state : wait"..."PINA: 0x04,0x01 => state: locked"...======================================================
+"state: lock, PINA 0x04, PINA 0x02  => state: unlocked"..."state: unlocked, PINA 0x80  => state: locked"..."PINA: 0x04 => state : wait"..."PINA: 0x04,0x01 => state: locked"..."state: lock, PINA 0x04, PINA 0x02  => state: unlocked, state: locked"...======================================================
 Quitting: Remote doesn't know how to detach
