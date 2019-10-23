@@ -1,0 +1,14 @@
+Breakpoint 1 at 0x10a: file source/main.c, line 32.
+Note: automatically using hardware breakpoints for read-only addresses.
+PORTC addr0x800028:	0x00
+Continuing.
+PORTC addr0x800028:	0x38
+Undefined command: "ls".  Try "help".
+Continuing.
+PORTC addr0x800028:	0x60
+A debugging session is active.
+
+	Inferior 1 [Remote target] will be detached.
+
+Quit anyway? (y or n) Detaching from program: /home/csmajs/dgunn001/CS120B/Lab5_Hardware/build/objects/main.elf, Remote target
+Quitting: Remote doesn't know how to detach

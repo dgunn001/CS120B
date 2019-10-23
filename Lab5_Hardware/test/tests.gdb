@@ -1,4 +1,4 @@
-# Test file for Lab5_Hardware
+# Test file for Lab3_BitManipulation
 
 
 # commands.gdb provides the following functions for ease:
@@ -27,14 +27,102 @@ echo ======================================================\n
 echo Running all tests..."\n\n
 
 # Example test:
-test "PINA: 0x00, PINB: 0x00 => PORTC: 0"
+test "PINA: 0x02=> PORTC: 0x60"
 # Set inputs
-setPINA 0x00
-setPINB 0x00
+setPINA 0x02
 # Continue for several ticks
-continue 2
+continue 1
 # Set expect values
-expectPORTC 0
+expectPORTC 0x60
+# Check pass/fail
+checkResult
+
+# Example test:
+test "PINA: 0x03=> PORTC: 0x70"
+# Set inputs
+setPINA 0x03
+# Continue for several ticks
+continue 1
+# Set expect values
+expectPORTC 0x70
+# Check pass/fail
+checkResult
+
+# Example test:
+test "PINA: 0x05=> PORTC: 0x38"
+# Set inputs
+setPINA 0x05
+# Continue for several ticks
+continue 1
+# Set expect values
+expectPORTC 0x38
+# Check pass/fail
+checkResult
+
+# Example test:
+test "PINA: 0x07=> PORTC: 0x3C"
+# Set inputs
+setPINA 0x07
+# Continue for several ticks
+continue 1
+# Set expect values
+expectPORTC 0x3C
+# Check pass/fail
+checkResult
+
+# Example test:
+test "PINA: 0x0A=> PORTC: 0x3E"
+# Set inputs
+setPINA 0x0A
+# Continue for several ticks
+continue 1
+# Set expect values
+expectPORTC 0x3E
+# Check pass/fail
+checkResult
+
+# Example test:
+test "PINA: 0x0D=> PORTC: 0x3F"
+# Set inputs
+setPINA 0x0D
+# Continue for several ticks
+continue 1
+# Set expect values
+expectPORTC 0x3F
+# Check pass/fail
+checkResult
+
+# Example test:
+test "PINA: 0x1D=> PORTC: 0x3F"
+# Set inputs
+setPINA 0x1D
+# Continue for several ticks
+continue 1
+# Set expect values
+expectPORTC 0x3F
+
+# Check pass/fail
+checkResult
+
+# Example test:
+test "PINA: 0x31=> PORTC: 0xE0"
+# Set inputs
+setPINA 0x31
+# Continue for several ticks
+continue 1
+# Set expect values
+expectPORTC 0xE0
+# Check pass/fail
+checkResult
+
+# Example test:
+test "PINA: 0x3D=> PORTC: 0xBF"
+# Set inputs
+setPINA 0x3D
+# Continue for several ticks
+continue 1
+# Set expect values
+expectPORTC 0xbf
 # Check pass/fail
 checkResult
 
