@@ -22,7 +22,7 @@ int main(void){
 
 	ADC_init();
 	while(1){
-		unsigned short x = ADC;
+		unsigned short x = ~ADC;
 		unsigned char bPort = (char)x;
 		PORTB = aPort;
 		unsigned char dPort = (char)(x >> 8);
