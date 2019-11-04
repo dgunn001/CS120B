@@ -21,11 +21,14 @@ int main(void){
 	DDRD = 0xFF; PORTD = 0x00;
 
 	ADC_init();
+	unsigned short max = 500;
+	unsigned short x = 0x00;
 	while(1){
-		unsigned short x = ~ADC;
-		unsigned char bPort = (char)x;
-		PORTB = aPort;
-		unsigned char dPort = (char)(x >> 8);
-		PORTD = dPort;
+		x = ADC;
+		if(x < max/2){
+			PORTB = 0x01;
+		} else {
+			PORTB = 0x00;
+		}
 	}
 }

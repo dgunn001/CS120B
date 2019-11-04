@@ -21,17 +21,14 @@ int main(void){
 	DDRD = 0xFF; PORTD = 0x00;
 
 	ADC_init();
+	unsigned short max = 500;
 	unsigned short x = 0x00;
-	unsigned char tempB = 0x00;
-	unsigned char tempD = 0x00
 	while(1){
 		x = ADC;
-		tempB = (char)x;
-		tempD = (char)(x >> 8);
-		if(photo < MAX/2){
-			PORTB = 0x00;
-		} else {
+		if(x < max/2){
 			PORTB = 0x01;
+		} else {
+			PORTB = 0x00;
 		}
 	}
 }
